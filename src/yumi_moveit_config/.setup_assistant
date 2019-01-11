@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: yumi_description
+    relative_path: urdf/yumi.urdf.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/yumi.srdf
+  CONFIG:
+    author_name: honghao lv
+    author_email: lvhonghao@zju.edu.cn
+    generated_timestamp: 1546947415
