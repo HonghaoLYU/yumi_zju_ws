@@ -6,4 +6,5 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(yumi_description)
+subdirs(yumi_gazebo)
 subdirs(yumi_moveit_config)
