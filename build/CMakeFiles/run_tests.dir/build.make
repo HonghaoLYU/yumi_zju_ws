@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yumi/yumi_ws/src
+CMAKE_SOURCE_DIR = /home/lhh/yumi_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yumi/yumi_ws/build
+CMAKE_BINARY_DIR = /home/lhh/yumi_ws/build
 
 # Utility rule file for run_tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/yumi/yumi_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yumi/yumi_ws/src /home/yumi/yumi_ws/src /home/yumi/yumi_ws/build /home/yumi/yumi_ws/build /home/yumi/yumi_ws/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lhh/yumi_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lhh/yumi_ws/src /home/lhh/yumi_ws/src /home/lhh/yumi_ws/build /home/lhh/yumi_ws/build /home/lhh/yumi_ws/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

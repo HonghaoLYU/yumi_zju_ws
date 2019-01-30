@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/yumi/yumi_ws/build"
+export PWD="/home/lhh/yumi_ws/build"
