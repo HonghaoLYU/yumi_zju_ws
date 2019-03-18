@@ -22,16 +22,16 @@
     <link name="table_main">
       <visual>
         <geometry>
-          <box size="1.6 0.8 0.026"/>
+          <box size="0.8 0.8 0.026"/>
         </geometry>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 0 0" xyz="-0.4 0 0"/>
         <material name="Ivory"/>
       </visual>
       <collision>
         <geometry>
-          <box size="1.6 0.8 0.026"/>
+          <box size="0.8 0.8 0.026"/>
         </geometry>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 0 0" xyz="-0.4 0 0"/>
         <material name="Ivory"/>
       </collision>
     </link>
@@ -77,14 +77,14 @@
         <geometry>
           <mesh filename="package://yumi_description/meshes/base/IRB14000_BaseStand_Fixed.stl"/>
         </geometry>
-        <material name="Orange"/>
+        <material name="Ivory"/>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="165.03939 -0.25716 0.00014"/>
         <geometry>
           <mesh filename="package://yumi_description/meshes/base/IRB14000_BaseStand_Fixed.stl"/>
         </geometry>
-        <material name="Orange"/>
+        <material name="Ivory"/>
       </collision>
     </link>
 
