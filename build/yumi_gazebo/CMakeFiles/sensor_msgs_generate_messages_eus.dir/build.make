@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lhh/yumi_ws/src
+CMAKE_SOURCE_DIR = /home/yumi/yumi_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lhh/yumi_ws/build
+CMAKE_BINARY_DIR = /home/yumi/yumi_ws/build
 
 # Utility rule file for sensor_msgs_generate_messages_eus.
 
@@ -63,10 +63,10 @@ yumi_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build: sensor_msgs_
 .PHONY : yumi_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 
 yumi_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
-	cd /home/lhh/yumi_ws/build/yumi_gazebo && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/yumi/yumi_ws/build/yumi_gazebo && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : yumi_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
 
 yumi_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend:
-	cd /home/lhh/yumi_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lhh/yumi_ws/src /home/lhh/yumi_ws/src/yumi_gazebo /home/lhh/yumi_ws/build /home/lhh/yumi_ws/build/yumi_gazebo /home/lhh/yumi_ws/build/yumi_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yumi/yumi_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yumi/yumi_ws/src /home/yumi/yumi_ws/src/yumi_gazebo /home/yumi/yumi_ws/build /home/yumi/yumi_ws/build/yumi_gazebo /home/yumi/yumi_ws/build/yumi_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : yumi_gazebo/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
 

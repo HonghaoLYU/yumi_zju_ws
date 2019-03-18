@@ -5,8 +5,8 @@
   <description>
      An automatically generated package with all the configuration and launch files for using the yumi with the MoveIt! Motion Planning Framework
   </description>
-  <author email="lvhonghao@zju.edu.cn">honghao lv</author>
-  <maintainer email="lvhonghao@zju.edu.cn">honghao lv</maintainer>
+  <author email="lvhonghao@zju.edu.cn">lvhonghao</author>
+  <maintainer email="lvhonghao@zju.edu.cn">lvhonghao</maintainer>
 
   <license>BSD</license>
 

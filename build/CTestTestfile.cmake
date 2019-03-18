@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/lhh/yumi_ws/src
-# Build directory: /home/lhh/yumi_ws/build
+# Source directory: /home/yumi/yumi_ws/src
+# Build directory: /home/yumi/yumi_ws/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

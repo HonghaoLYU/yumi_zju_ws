@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lhh/yumi_ws/src
+CMAKE_SOURCE_DIR = /home/yumi/yumi_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lhh/yumi_ws/build
+CMAKE_BINARY_DIR = /home/yumi/yumi_ws/build
 
 # Utility rule file for bond_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ yumi_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/build: bond_generate_messa
 .PHONY : yumi_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/build
 
 yumi_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/clean:
-	cd /home/lhh/yumi_ws/build/yumi_gazebo && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/yumi/yumi_ws/build/yumi_gazebo && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : yumi_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/clean
 
 yumi_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/depend:
-	cd /home/lhh/yumi_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lhh/yumi_ws/src /home/lhh/yumi_ws/src/yumi_gazebo /home/lhh/yumi_ws/build /home/lhh/yumi_ws/build/yumi_gazebo /home/lhh/yumi_ws/build/yumi_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yumi/yumi_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yumi/yumi_ws/src /home/yumi/yumi_ws/src/yumi_gazebo /home/yumi/yumi_ws/build /home/yumi/yumi_ws/build/yumi_gazebo /home/yumi/yumi_ws/build/yumi_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : yumi_gazebo/CMakeFiles/bond_generate_messages_cpp.dir/depend
 

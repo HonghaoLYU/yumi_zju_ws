@@ -6,6 +6,6 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/yumi.srdf
   CONFIG:
-    author_name: honghao lv
+    author_name: lvhonghao
     author_email: lvhonghao@zju.edu.cn
-    generated_timestamp: 1546947415
+    generated_timestamp: 1552898418

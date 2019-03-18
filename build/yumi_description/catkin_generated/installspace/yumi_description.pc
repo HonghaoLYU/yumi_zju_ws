@@ -1,8 +1,8 @@
-prefix=/home/lhh/yumi_ws/install
+prefix=/home/yumi/yumi_ws/install
 
 Name: yumi_description
 Description: Description of yumi_description
 Version: 0.0.2
 Cflags: 
-Libs: -L/home/lhh/yumi_ws/install/lib 
+Libs: -L/home/yumi/yumi_ws/install/lib 
 Requires: 

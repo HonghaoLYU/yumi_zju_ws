@@ -1,8 +1,8 @@
-prefix=/home/lhh/yumi_ws/devel
+prefix=/home/yumi/yumi_ws/devel
 
 Name: yumi_gazebo
 Description: Description of yumi_gazebo
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/lhh/yumi_ws/devel/lib 
+Libs: -L/home/yumi/yumi_ws/devel/lib 
 Requires: 

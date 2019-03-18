@@ -1,8 +1,8 @@
-prefix=/home/lhh/yumi_ws/devel
+prefix=/home/yumi/yumi_ws/devel
 
 Name: yumi_moveit_config
 Description: Description of yumi_moveit_config
 Version: 0.3.0
 Cflags: 
-Libs: -L/home/lhh/yumi_ws/devel/lib 
+Libs: -L/home/yumi/yumi_ws/devel/lib 
 Requires: 

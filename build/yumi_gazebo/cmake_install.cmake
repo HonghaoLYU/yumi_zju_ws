@@ -1,8 +1,8 @@
-# Install script for directory: /home/lhh/yumi_ws/src/yumi_gazebo
+# Install script for directory: /home/yumi/yumi_ws/src/yumi_gazebo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/lhh/yumi_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/yumi/yumi_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lhh/yumi_ws/build/yumi_gazebo/catkin_generated/installspace/yumi_gazebo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yumi/yumi_ws/build/yumi_gazebo/catkin_generated/installspace/yumi_gazebo.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yumi_gazebo/cmake" TYPE FILE FILES
-    "/home/lhh/yumi_ws/build/yumi_gazebo/catkin_generated/installspace/yumi_gazeboConfig.cmake"
-    "/home/lhh/yumi_ws/build/yumi_gazebo/catkin_generated/installspace/yumi_gazeboConfig-version.cmake"
+    "/home/yumi/yumi_ws/build/yumi_gazebo/catkin_generated/installspace/yumi_gazeboConfig.cmake"
+    "/home/yumi/yumi_ws/build/yumi_gazebo/catkin_generated/installspace/yumi_gazeboConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yumi_gazebo" TYPE FILE FILES "/home/lhh/yumi_ws/src/yumi_gazebo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yumi_gazebo" TYPE FILE FILES "/home/yumi/yumi_ws/src/yumi_gazebo/package.xml")
 endif()
 
