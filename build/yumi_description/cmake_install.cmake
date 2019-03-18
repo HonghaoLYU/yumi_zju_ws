@@ -1,8 +1,8 @@
-# Install script for directory: /home/yumi/yumi_ws/src/yumi_description
+# Install script for directory: /home/lhh/yumi_ws/src/yumi_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yumi/yumi_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lhh/yumi_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,24 +33,24 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yumi/yumi_ws/build/yumi_description/catkin_generated/installspace/yumi_description.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lhh/yumi_ws/build/yumi_description/catkin_generated/installspace/yumi_description.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yumi_description/cmake" TYPE FILE FILES
-    "/home/yumi/yumi_ws/build/yumi_description/catkin_generated/installspace/yumi_descriptionConfig.cmake"
-    "/home/yumi/yumi_ws/build/yumi_description/catkin_generated/installspace/yumi_descriptionConfig-version.cmake"
+    "/home/lhh/yumi_ws/build/yumi_description/catkin_generated/installspace/yumi_descriptionConfig.cmake"
+    "/home/lhh/yumi_ws/build/yumi_description/catkin_generated/installspace/yumi_descriptionConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yumi_description" TYPE FILE FILES "/home/yumi/yumi_ws/src/yumi_description/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yumi_description" TYPE FILE FILES "/home/lhh/yumi_ws/src/yumi_description/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yumi_description" TYPE DIRECTORY FILES
-    "/home/yumi/yumi_ws/src/yumi_description/meshes"
-    "/home/yumi/yumi_ws/src/yumi_description/urdf"
+    "/home/lhh/yumi_ws/src/yumi_description/meshes"
+    "/home/lhh/yumi_ws/src/yumi_description/urdf"
     )
 endif()
 
