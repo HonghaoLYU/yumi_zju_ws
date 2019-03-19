@@ -33,15 +33,4 @@ yumi:
     type: joint_state_controller/JointStateController
     publish_rate: 50
   controller_list:
-    - name: right_arm_controller
-      action_ns: follow_joint_trajectory
-      default: True
-      type: FollowJointTrajectory
-      joints:
-        - yumi_joint_1_r
-        - yumi_joint_2_r
-        - yumi_joint_7_r
-        - yumi_joint_3_r
-        - yumi_joint_4_r
-        - yumi_joint_5_r
-        - yumi_joint_6_r
+    []

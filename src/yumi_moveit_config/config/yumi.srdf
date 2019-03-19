@@ -22,6 +22,19 @@
     <group name="right_hand">
         <joint name="gripper_r_joint_r" />
     </group>
+    <group name="left_arm">
+        <joint name="yumi_joint_1_l" />
+        <joint name="yumi_joint_2_l" />
+        <joint name="yumi_joint_7_l" />
+        <joint name="yumi_joint_3_l" />
+        <joint name="yumi_joint_4_l" />
+        <joint name="yumi_joint_5_l" />
+        <joint name="yumi_joint_6_l" />
+        <joint name="gripper_l_tcp" />
+    </group>
+    <group name="left_hand">
+        <joint name="gripper_l_joint_r" />
+    </group>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_joint" type="fixed" parent_frame="world" child_link="workspace" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->

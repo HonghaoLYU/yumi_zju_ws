@@ -11,3 +11,15 @@ controller_list:
   - name: fake_right_hand_controller
     joints:
       - gripper_r_joint_r
+  - name: fake_left_arm_controller
+    joints:
+      - yumi_joint_1_l
+      - yumi_joint_2_l
+      - yumi_joint_7_l
+      - yumi_joint_3_l
+      - yumi_joint_4_l
+      - yumi_joint_5_l
+      - yumi_joint_6_l
+  - name: fake_left_hand_controller
+    joints:
+      - gripper_l_joint_r
