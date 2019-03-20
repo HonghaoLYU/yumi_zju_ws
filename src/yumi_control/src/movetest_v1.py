@@ -42,19 +42,20 @@ class MoveGroupPythonInteface(object):
         scene = moveit_commander.PlanningSceneInterface()
 
         # 实例化 a `MoveGroupCommander`_ 对象.
-        group_name = "right_arm"
-        arm = moveit_commander.MoveGroupCommander(group_name)
-        hand = moveit_commander.MoveGroupCommander("right_hand")
+        right_arm = moveit_commander.MoveGroupCommander("right_arm")
+        right_hand = moveit_commander.MoveGroupCommander("right_hand")
+        left_arm = moveit_commander.MoveGroupCommander("left_arm")
+        left_hand = moveit_commander.MoveGroupCommander("left_hand")
 
         # 创建 `DisplayTrajectory`_ publisher,稍后用于发布RViz可视化的轨迹
         display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path',moveit_msgs.msg.DisplayTrajectory,queue_size=20)
 
         # 获取机器人的参考坐标系并输出
-        planning_frame = arm.get_planning_frame()
+        planning_frame = right_arm.get_planning_frame()
         print "============ Reference frame: %s" % planning_frame
 
         # 获取当前末端执行器并输出
-        eef_link = arm.get_end_effector_link()
+        eef_link = right_arm.get_end_effector_link()
         print "============ End effector: %s" % eef_link
 
         # 获取机器人中所有groups的名称并打印:
@@ -70,18 +71,20 @@ class MoveGroupPythonInteface(object):
         self.box_name = ''
         self.robot = robot
         self.scene = scene
-        self.arm = arm
-        self.hand = hand
+        self.right_arm = right_arm
+        self.right_hand = right_hand
+        self.left_arm = left_arm
+        self.left_hand = left_hand
         self.display_trajectory_publisher = display_trajectory_publisher
         self.planning_frame = planning_frame
         self.eef_link = eef_link
         self.group_names = group_names
 
     def go_to_joint_state(self):
-        # 设置动作对象变量,此处为arm
-        arm = self.arm
+        # 设置动作对象变量
+        right_arm = self.right_arm
         # 获取当前目标点关节状态
-        joint_goal = arm.get_current_joint_values()
+        joint_goal = right_arm.get_current_joint_values()
         if count == 1:
             joint_goal[0] = 0
             joint_goal[1] = -pi/4
@@ -100,17 +103,17 @@ class MoveGroupPythonInteface(object):
             joint_goal[6] = 0
 
         # 规划并执行路径动作
-        arm.go(joint_goal, wait=True)
+        right_arm.go(joint_goal, wait=True)
 
         # 调用 stop() 命令，确保动作停止
-        arm.stop()
+        right_arm.stop()
 
     def go_to_pose_goal(self):
-        # 设置动作对象变量,此处为arm
-        arm = self.arm
+        # 设置动作对象变量
+        right_arm = self.right_arm
 
         # 获取当前末端执行器位置姿态
-        pose_goal = self.arm.get_current_pose().pose
+        pose_goal = self.right_arm.get_current_pose().pose
 
         print (a)
 
@@ -122,17 +125,17 @@ class MoveGroupPythonInteface(object):
         pose_goal.position.x = pose_goal.position.x
         pose_goal.position.y = pose_goal.position.y + a
         pose_goal.position.z = pose_goal.position.z
-        arm.set_pose_target(pose_goal)
+        right_arm.set_pose_target(pose_goal)
         print "End effector pose %s" % pose_goal
 
         # euler_from_quaternion(pose_goal.orientation,)
 
         # 规划和输出动作
-        arm.go(wait=True)
+        right_arm.go(wait=True)
         # 确保没有剩余未完成动作在执行
-        arm.stop()
+        right_arm.stop()
         # 动作完成后清除目标信息
-        arm.clear_pose_targets()
+        right_arm.clear_pose_targets()
 
     def go_to_gripper_goal(self):
         # 设置动作对象变量，此处为gripper
@@ -153,41 +156,77 @@ class MoveGroupPythonInteface(object):
         gripper.clear_pose_targets()
 
     def go_to_gripper_joint_goal(self):
-        # 设置动作对象变量,此处为arm
-        arm = self.arm
+        # 设置动作对象变量
+        right_arm = self.right_arm
         # 获取当前目标点关节状态
-        joint_goal = arm.get_current_joint_values()
+        joint_goal = right_arm.get_current_joint_values()
         joint_goal[7] = joint_goal[7] + 0.001
 
         # 规划并执行路径动作
-        arm.go(joint_goal, wait=True)
+        right_arm.go(joint_goal, wait=True)
 
         # 调用 stop() 命令，确保动作停止
-        arm.stop()
+        right_arm.stop()
 
-    def go_to_home_goal(self):
+    def right_arm_go_to_home_goal(self):
         # 控制机械臂回到初始化位置
-        arm = self.arm
-        arm.set_named_target('home')
-        arm.go()
+        right_arm = self.right_arm
+        right_arm.set_named_target('home')
+        right_arm.go()
 
-    def go_to_cal_goal(self):
+    def right_arm_go_to_cal_goal(self):
         # 控制机械臂回到校准位置
-        arm = self.arm
-        arm.set_named_target('calc')
-        arm.go()
+        right_arm = self.right_arm
+        right_arm.set_named_target('calc')
+        right_arm.go()
 
-    def go_to_ready_goal(self):
+    def right_arm_go_to_ready_goal(self):
         # 控制机械臂回到校准位置
-        arm = self.arm
-        arm.set_named_target('ready')
-        arm.go()
+        right_arm = self.right_arm
+        right_arm.set_named_target('ready')
+        right_arm.go()
 
-    def go_to_open_goal(self):
+    def right_hand_go_to_open_goal(self):
         # 控制夹具张开
-        hand = self.hand
-        hand.set_named_target('open')
-        hand.go()
+        right_hand = self.right_hand
+        right_hand.set_named_target('open')
+        right_hand.go()
+
+    def right_hand_go_to_close_goal(self):
+        # 控制夹具张开
+        right_hand = self.right_hand
+        right_hand.set_named_target('close')
+        right_hand.go()
+
+    def left_arm_go_to_home_goal(self):
+        # 控制机械臂回到初始化位置
+        left_arm = self.left_arm
+        left_arm.set_named_target('home')
+        left_arm.go()
+
+    def left_arm_go_to_cal_goal(self):
+        # 控制机械臂回到校准位置
+        left_arm = self.left_arm
+        left_arm.set_named_target('calc')
+        left_arm.go()
+
+    def left_arm_go_to_ready_goal(self):
+        # 控制机械臂回到校准位置
+        left_arm = self.left_arm
+        left_arm.set_named_target('ready')
+        left_arm.go()
+
+    def left_hand_go_to_open_goal(self):
+        # 控制夹具张开
+        left_hand = self.left_hand
+        left_hand.set_named_target('open')
+        left_hand.go()
+
+    def left_hand_go_to_close_goal(self):
+        # 控制夹具张开
+        left_hand = self.left_hand
+        left_hand.set_named_target('close')
+        left_hand.go()
 
 
 def main():
@@ -208,18 +247,24 @@ def main():
         # if count == 1:
         print "============ Press `Enter` to execute a arm movement using a joint state goal for the original state..."
         raw_input()
-        yumi.go_to_cal_goal()
-        yumi.go_to_open_goal()
+        yumi.right_arm_go_to_cal_goal()
+        yumi.right_hand_go_to_close_goal()
+        yumi.right_arm_go_to_ready_goal()
+        yumi.right_hand_go_to_open_goal()
 
-        # # 执行arm目标点动作
-        # print "============ Press `Enter` to execute a arm movement using a pose goal ..."
-        # raw_input()
-        # yumi.go_to_gripper_joint_goal()
+        # 执行目标点动作
+        print "============ Press `Enter` to execute a arm movement using a pose goal ..."
+        raw_input()
+        yumi.left_arm_go_to_cal_goal()
+        yumi.left_hand_go_to_close_goal()
+        yumi.left_arm_go_to_ready_goal()
+        yumi.left_hand_go_to_open_goal()
 
         # # 执行gripper目标点动作
         # print "============ Press `Enter` to execute a gripper movement using a pose goal ..."
         # raw_input()
         # yumi.go_to_gripper_goal()
+
 
 if __name__ == '__main__':
     main()
