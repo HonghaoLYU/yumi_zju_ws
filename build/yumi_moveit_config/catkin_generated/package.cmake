@@ -1,6 +1,6 @@
 set(_CATKIN_CURRENT_PACKAGE "yumi_moveit_config")
 set(yumi_moveit_config_VERSION "0.3.0")
-set(yumi_moveit_config_MAINTAINER "honghao lv <lvhonghao@zju.edu.cn>")
+set(yumi_moveit_config_MAINTAINER "lvhonghao <lvhonghao@zju.edu.cn>")
 set(yumi_moveit_config_PACKAGE_FORMAT "1")
 set(yumi_moveit_config_BUILD_DEPENDS "yumi_description")
 set(yumi_moveit_config_BUILD_EXPORT_DEPENDS "moveit_ros_move_group" "moveit_fake_controller_manager" "moveit_kinematics" "moveit_planners_ompl" "moveit_ros_visualization" "moveit_setup_assistant" "joint_state_publisher" "robot_state_publisher" "xacro" "yumi_description")

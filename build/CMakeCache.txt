@@ -486,6 +486,12 @@ urdf_DIR:PATH=/opt/ros/kinetic/share/urdf/cmake
 xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake
 
 //Value Computed by CMake
+yumi_control_BINARY_DIR:STATIC=/home/yumi/yumi_ws/build/yumi_control
+
+//Value Computed by CMake
+yumi_control_SOURCE_DIR:STATIC=/home/yumi/yumi_ws/src/yumi_control
+
+//Value Computed by CMake
 yumi_description_BINARY_DIR:STATIC=/home/yumi/yumi_ws/build/yumi_description
 
 //Value Computed by CMake
@@ -605,7 +611,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

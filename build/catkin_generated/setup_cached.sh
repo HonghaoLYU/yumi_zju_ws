@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH="/home/yumi/ws_moveit/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu"
-export PKG_CONFIG_PATH="/home/yumi/ws_moveit/devel/lib/pkgconfig:/opt/ros/kinetic/lib/pkgconfig:/opt/ros/kinetic/lib/x86_64-linux-gnu/pkgconfig"
 export PWD="/home/yumi/yumi_ws/build"
-export ROS_PACKAGE_PATH="/home/yumi/yumi_ws/src:/home/yumi/ws_moveit/src:/opt/ros/kinetic/share"
