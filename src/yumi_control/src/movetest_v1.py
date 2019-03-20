@@ -15,13 +15,13 @@ from moveit_commander.conversions import pose_to_list
 a = 0
 
 
-# 定义回调函数,订阅接受到的消息传给data
-def callback(data):
-    # 对全局变量a进行赋值
-    global a
-    a = data.data
-    # 转换a为浮点型
-    a = float(a)
+# # 定义回调函数,订阅接受到的消息传给data
+# def callback(data):
+#     # 对全局变量a进行赋值
+#     global a
+#     a = data.data
+#     # 转换a为浮点型
+#     a = float(a)
 
 
 class MoveGroupPythonInteface(object):
@@ -33,7 +33,7 @@ class MoveGroupPythonInteface(object):
         rospy.init_node('move_group_python_interface',anonymous=True)
 
         # 订阅话题
-        rospy.Subscriber('yumiaction', String, callback)
+        # rospy.Subscriber('yumiaction', String, callback)
 
         # 实例化 a `RobotCommander`_ 对象.
         robot = moveit_commander.RobotCommander()
@@ -44,8 +44,7 @@ class MoveGroupPythonInteface(object):
         # 实例化 a `MoveGroupCommander`_ 对象.
         group_name = "right_arm"
         arm = moveit_commander.MoveGroupCommander(group_name)
-        # gripper_name = "right_hand"
-        # gripper = moveit_commander.MoveGroupCommander(gripper_name)
+        hand = moveit_commander.MoveGroupCommander("right_hand")
 
         # 创建 `DisplayTrajectory`_ publisher,稍后用于发布RViz可视化的轨迹
         display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path',moveit_msgs.msg.DisplayTrajectory,queue_size=20)
@@ -67,12 +66,12 @@ class MoveGroupPythonInteface(object):
         print robot.get_current_state()
         print ""
 
-        # 各种变量
+        # 各种变量:
         self.box_name = ''
         self.robot = robot
         self.scene = scene
         self.arm = arm
-        # self.gripper = gripper
+        self.hand = hand
         self.display_trajectory_publisher = display_trajectory_publisher
         self.planning_frame = planning_frame
         self.eef_link = eef_link
@@ -175,7 +174,7 @@ class MoveGroupPythonInteface(object):
     def go_to_cal_goal(self):
         # 控制机械臂回到校准位置
         arm = self.arm
-        arm.set_named_target('cal')
+        arm.set_named_target('calc')
         arm.go()
 
     def go_to_ready_goal(self):
@@ -183,6 +182,12 @@ class MoveGroupPythonInteface(object):
         arm = self.arm
         arm.set_named_target('ready')
         arm.go()
+
+    def go_to_open_goal(self):
+        # 控制夹具张开
+        hand = self.hand
+        hand.set_named_target('open')
+        hand.go()
 
 
 def main():
@@ -200,15 +205,16 @@ def main():
         count = count + 1
 
         # 首次程序执行,回到动作原点
-        if count == 1:
-            print "============ Press `Enter` to execute a arm movement using a joint state goal for the original state..."
-            raw_input()
-            yumi.go_to_cal_goal()
-
-        # 执行arm目标点动作
-        print "============ Press `Enter` to execute a arm movement using a pose goal ..."
+        # if count == 1:
+        print "============ Press `Enter` to execute a arm movement using a joint state goal for the original state..."
         raw_input()
-        yumi.go_to_gripper_joint_goal()
+        yumi.go_to_cal_goal()
+        yumi.go_to_open_goal()
+
+        # # 执行arm目标点动作
+        # print "============ Press `Enter` to execute a arm movement using a pose goal ..."
+        # raw_input()
+        # yumi.go_to_gripper_joint_goal()
 
         # # 执行gripper目标点动作
         # print "============ Press `Enter` to execute a gripper movement using a pose goal ..."
