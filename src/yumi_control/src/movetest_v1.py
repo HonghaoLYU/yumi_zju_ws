@@ -260,11 +260,6 @@ def main():
         yumi.left_arm_go_to_ready_goal()
         yumi.left_hand_go_to_open_goal()
 
-        # # 执行gripper目标点动作
-        # print "============ Press `Enter` to execute a gripper movement using a pose goal ..."
-        # raw_input()
-        # yumi.go_to_gripper_goal()
-
 
 if __name__ == '__main__':
     main()

@@ -1,6 +1,17 @@
 # yumi_zju_ws
-2019,1
-# 2019.3.18 
-文章初稿定好后，想要尝试改变末端执行器的定义，两种方案：
-1. 到tcp
-2. 到gipper——base
+## basic note：
+author： lvhonghao
+email：lvhonghao@zju.edu.cn
+
+## package description:
+### yumi_description
+1. yumi的URDF模型文件包；
+
+### yumi_moveit_config
+1. yumi的moveit控制配置包；
+
+### yumi_control
+1. 基于python_api的moveit接口控制程序包裹；
+
+##  version update log 
+
