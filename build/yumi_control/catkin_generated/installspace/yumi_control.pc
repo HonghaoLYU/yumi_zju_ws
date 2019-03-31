@@ -3,6 +3,6 @@ prefix=/home/yumi/yumi_ws/install
 Name: yumi_control
 Description: Description of yumi_control
 Version: 0.0.0
-Cflags: 
-Libs: -L/home/yumi/yumi_ws/install/lib 
-Requires: 
+Cflags: -I/usr/include/eigen3
+Libs: -L/home/yumi/yumi_ws/install/lib -linteractivity_utils
+Requires: moveit_core moveit_visual_tools moveit_ros_planning_interface interactive_markers

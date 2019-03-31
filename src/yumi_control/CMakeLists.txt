@@ -2,19 +2,48 @@ cmake_minimum_required(VERSION 2.8.3)
 project(yumi_control)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+
+find_package(Eigen3 REQUIRED)
+# Eigen 3.2 (Wily) only provides EIGEN3_INCLUDE_DIR, not EIGEN3_INCLUDE_DIRS
+if(NOT EIGEN3_INCLUDE_DIRS)
+  set(EIGEN3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
+endif()
+
 find_package(catkin REQUIRED COMPONENTS
+  actionlib
+  control_msgs
+  diagnostic_msgs
+  geometry_msgs
+  interactive_markers
+  manipulation_msgs
+  moveit_core
+  moveit_visual_tools
+  moveit_ros_planning
+  moveit_msgs
+  moveit_ros_perception
+  moveit_ros_planning_interface
+  pluginlib
   roscpp
   rospy
+  sensor_msgs
+  shape_msgs
   std_msgs
+  std_srvs
+  rosbag
+  tf2_ros
+  tf2_eigen
+  tf2_geometry_msgs
+  tf
+  trajectory_msgs
 )
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS system)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -103,10 +132,17 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES yumi_control
-#  CATKIN_DEPENDS roscpp rospy std_msgs
-#  DEPENDS system_lib
+  LIBRARIES
+    interactivity_utils
+  INCLUDE_DIRS
+    ${THIS_PACKAGE_INCLUDE_DIRS}
+  CATKIN_DEPENDS
+    moveit_core
+    moveit_visual_tools
+    moveit_ros_planning_interface
+    interactive_markers
+  DEPENDS
+    EIGEN3
 )
 
 ###########
@@ -115,8 +151,8 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
+include_directories(SYSTEM ${THIS_PACKAGE_INCLUDE_DIRS} ${Boost_INCLUDE_DIR} ${EIGEN3_INCLUDE_DIRS})
 include_directories(
-# include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -149,6 +185,22 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+add_executable(talker src/talker.cpp)
+target_link_libraries(talker ${catkin_LIBRARIES})
+add_dependencies(talker beginner_tutorials_generate_messages_cpp)
+
+add_executable(listener src/listener.cpp)
+target_link_libraries(listener ${catkin_LIBRARIES})
+add_dependencies(listener beginner_tutorials_generate_messages_cpp)
+
+add_executable(test_custom src/test_custom.cpp)
+target_link_libraries(test_custom ${catkin_LIBRARIES})
+# add_dependencies(listener beginner_tutorials_generate_messages_cpp)
+
+add_executable(move_group_interface src/move_group_interface.cpp)
+target_link_libraries(move_group_interface ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+install(TARGETS move_group_interface DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 #############
 ## Install ##
