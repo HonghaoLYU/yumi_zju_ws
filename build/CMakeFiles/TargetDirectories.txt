@@ -31,6 +31,8 @@
 /home/yumi/yumi_ws/build/yumi_control/CMakeFiles/rebuild_cache.dir
 /home/yumi/yumi_ws/build/yumi_control/CMakeFiles/install/local.dir
 /home/yumi/yumi_ws/build/yumi_control/CMakeFiles/install/strip.dir
+/home/yumi/yumi_ws/build/yumi_control/CMakeFiles/movetest_v1.dir
+/home/yumi/yumi_ws/build/yumi_control/CMakeFiles/movetest.dir
 /home/yumi/yumi_ws/build/yumi_control/CMakeFiles/test_custom.dir
 /home/yumi/yumi_ws/build/yumi_control/CMakeFiles/talker.dir
 /home/yumi/yumi_ws/build/yumi_control/CMakeFiles/topic_tools_generate_messages_eus.dir

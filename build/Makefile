@@ -283,6 +283,32 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named movetest_v1
+
+# Build rule for target.
+movetest_v1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 movetest_v1
+.PHONY : movetest_v1
+
+# fast build rule for target.
+movetest_v1/fast:
+	$(MAKE) -f yumi_control/CMakeFiles/movetest_v1.dir/build.make yumi_control/CMakeFiles/movetest_v1.dir/build
+.PHONY : movetest_v1/fast
+
+#=============================================================================
+# Target rules for targets named movetest
+
+# Build rule for target.
+movetest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 movetest
+.PHONY : movetest
+
+# fast build rule for target.
+movetest/fast:
+	$(MAKE) -f yumi_control/CMakeFiles/movetest.dir/build.make yumi_control/CMakeFiles/movetest.dir/build
+.PHONY : movetest/fast
+
+#=============================================================================
 # Target rules for targets named test_custom
 
 # Build rule for target.
@@ -2332,6 +2358,8 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... movetest_v1"
+	@echo "... movetest"
 	@echo "... test_custom"
 	@echo "... talker"
 	@echo "... topic_tools_generate_messages_eus"

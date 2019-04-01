@@ -166,6 +166,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+yumi_control/CMakeFiles/movetest_v1.dir/rule:
+	cd /home/yumi/yumi_ws/build && $(MAKE) -f CMakeFiles/Makefile2 yumi_control/CMakeFiles/movetest_v1.dir/rule
+.PHONY : yumi_control/CMakeFiles/movetest_v1.dir/rule
+
+# Convenience name for target.
+movetest_v1: yumi_control/CMakeFiles/movetest_v1.dir/rule
+
+.PHONY : movetest_v1
+
+# fast build rule for target.
+movetest_v1/fast:
+	cd /home/yumi/yumi_ws/build && $(MAKE) -f yumi_control/CMakeFiles/movetest_v1.dir/build.make yumi_control/CMakeFiles/movetest_v1.dir/build
+.PHONY : movetest_v1/fast
+
+# Convenience name for target.
+yumi_control/CMakeFiles/movetest.dir/rule:
+	cd /home/yumi/yumi_ws/build && $(MAKE) -f CMakeFiles/Makefile2 yumi_control/CMakeFiles/movetest.dir/rule
+.PHONY : yumi_control/CMakeFiles/movetest.dir/rule
+
+# Convenience name for target.
+movetest: yumi_control/CMakeFiles/movetest.dir/rule
+
+.PHONY : movetest
+
+# fast build rule for target.
+movetest/fast:
+	cd /home/yumi/yumi_ws/build && $(MAKE) -f yumi_control/CMakeFiles/movetest.dir/build.make yumi_control/CMakeFiles/movetest.dir/build
+.PHONY : movetest/fast
+
+# Convenience name for target.
 yumi_control/CMakeFiles/test_custom.dir/rule:
 	cd /home/yumi/yumi_ws/build && $(MAKE) -f CMakeFiles/Makefile2 yumi_control/CMakeFiles/test_custom.dir/rule
 .PHONY : yumi_control/CMakeFiles/test_custom.dir/rule
@@ -1974,6 +2004,36 @@ src/move_group_interface.cpp.s:
 	cd /home/yumi/yumi_ws/build && $(MAKE) -f yumi_control/CMakeFiles/move_group_interface.dir/build.make yumi_control/CMakeFiles/move_group_interface.dir/src/move_group_interface.cpp.s
 .PHONY : src/move_group_interface.cpp.s
 
+src/movetest.o: src/movetest.cpp.o
+
+.PHONY : src/movetest.o
+
+# target to build an object file
+src/movetest.cpp.o:
+	cd /home/yumi/yumi_ws/build && $(MAKE) -f yumi_control/CMakeFiles/movetest_v1.dir/build.make yumi_control/CMakeFiles/movetest_v1.dir/src/movetest.cpp.o
+	cd /home/yumi/yumi_ws/build && $(MAKE) -f yumi_control/CMakeFiles/movetest.dir/build.make yumi_control/CMakeFiles/movetest.dir/src/movetest.cpp.o
+.PHONY : src/movetest.cpp.o
+
+src/movetest.i: src/movetest.cpp.i
+
+.PHONY : src/movetest.i
+
+# target to preprocess a source file
+src/movetest.cpp.i:
+	cd /home/yumi/yumi_ws/build && $(MAKE) -f yumi_control/CMakeFiles/movetest_v1.dir/build.make yumi_control/CMakeFiles/movetest_v1.dir/src/movetest.cpp.i
+	cd /home/yumi/yumi_ws/build && $(MAKE) -f yumi_control/CMakeFiles/movetest.dir/build.make yumi_control/CMakeFiles/movetest.dir/src/movetest.cpp.i
+.PHONY : src/movetest.cpp.i
+
+src/movetest.s: src/movetest.cpp.s
+
+.PHONY : src/movetest.s
+
+# target to generate assembly for a file
+src/movetest.cpp.s:
+	cd /home/yumi/yumi_ws/build && $(MAKE) -f yumi_control/CMakeFiles/movetest_v1.dir/build.make yumi_control/CMakeFiles/movetest_v1.dir/src/movetest.cpp.s
+	cd /home/yumi/yumi_ws/build && $(MAKE) -f yumi_control/CMakeFiles/movetest.dir/build.make yumi_control/CMakeFiles/movetest.dir/src/movetest.cpp.s
+.PHONY : src/movetest.cpp.s
+
 src/talker.o: src/talker.cpp.o
 
 .PHONY : src/talker.o
@@ -2037,6 +2097,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... movetest_v1"
+	@echo "... movetest"
 	@echo "... test_custom"
 	@echo "... talker"
 	@echo "... topic_tools_generate_messages_eus"
@@ -2164,6 +2226,9 @@ help:
 	@echo "... src/move_group_interface.o"
 	@echo "... src/move_group_interface.i"
 	@echo "... src/move_group_interface.s"
+	@echo "... src/movetest.o"
+	@echo "... src/movetest.i"
+	@echo "... src/movetest.s"
 	@echo "... src/talker.o"
 	@echo "... src/talker.i"
 	@echo "... src/talker.s"

@@ -28,7 +28,8 @@ int main(int argc, char** argv)
   const robot_state::JointModelGroup* joint_model_group =
       move_group.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
 
-
+  while(1)
+  {
   // MoveItVisualTools 提供可视化步进调试工具
   namespace rvt = rviz_visual_tools;
   moveit_visual_tools::MoveItVisualTools visual_tools("panda_link0");
@@ -274,7 +275,7 @@ int main(int argc, char** argv)
   /* Wait for MoveGroup to recieve and process the attached collision object message */
   visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to once the collision object disapears");
   // END_TUTORIAL
-
+  }
   ros::shutdown();
   return 0;
 }

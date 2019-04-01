@@ -151,7 +151,8 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(SYSTEM ${THIS_PACKAGE_INCLUDE_DIRS} ${Boost_INCLUDE_DIR} ${EIGEN3_INCLUDE_DIRS})
+include_directories(
+  include ${catkin_INCLUDE_DIRS}SYSTEM ${THIS_PACKAGE_INCLUDE_DIRS} ${Boost_INCLUDE_DIR} ${EIGEN3_INCLUDE_DIRS})
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
@@ -202,6 +203,9 @@ add_executable(move_group_interface src/move_group_interface.cpp)
 target_link_libraries(move_group_interface ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 install(TARGETS move_group_interface DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
+add_executable(movetest src/movetest.cpp)
+target_link_libraries(movetest ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############
@@ -249,3 +253,12 @@ install(TARGETS move_group_interface DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATIO
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+
+add_library(movetest_v1
+  src/movetest.cpp
+)
+add_dependencies(movetest_v1 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(movetest_v1
+  ${catkin_LIBRARIES}
+)
